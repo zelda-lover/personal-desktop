@@ -16,13 +16,32 @@
             <div id="clock"></div>
         </div>
         <div class="main">
-           
+           <div class="widget">
+                <h3>Widget 01</h3>
+                <div class="notepad">
+                    <textarea id="note-area" name="message" rows="20" cols="40">
+
+                    </textarea>
+                </div>
+                <button id="saveNotesBtn">Save</button>
+           </div>
+           <div class="widget">
+             <h3>Widget 01</h3>
+           </div>
+           <div class="widget">
+             <h3>Widget 01</h3>
+           </div>
         </div>
     </div>
 </body>
 
 <script>
-
+$("#saveNotesBtn").click(function(){
+    var currentNotes = $("#note-area").val()
+    localStorage.setItem("notes", currentNotes)
+})
+var oldNotes = localStorage.getItem("notes")
+$("#note-area").val(oldNotes)
 </script>
 </html>
 
